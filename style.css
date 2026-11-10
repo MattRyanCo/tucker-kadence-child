@@ -1,0 +1,144 @@
+/*
+Theme Name:     Tucker Kadence Child
+Theme URI:      https://github.com/capwebsolutions/tucker-kadence-child
+Template:       kadence
+Author:         Matt Ryan
+Author URI:     https://mattryan.co
+Description:    Kadence child theme for tuckerclub.org
+Version:        1.0.1
+License:        GNU General Public License v3.0 (or later)
+License URI:    https://www.gnu.org/licenses/gpl-3.0.html
+GitHub Theme URI: https://github.com/mattryanco/tucker-kadence-child
+*/
+
+/* Theme customization starts here
+-------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("fonts/helveticaneue.woff2") format("woff2"),
+	   url("fonts/helveticaneue.woff") format("woff");
+}
+
+/* Base font fallback (Kadence's Customizer has no fallback setting).
+ Note that overrides Kadence's setting for the base font family. 
+ This rule needs to be removed if the base font is changed in the Customizer later.*/
+html:root {
+	--global-body-font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Home page min height */
+.kb-row-layout-wrap.kb-row-layout-id15_62b29a-68 > .kt-row-column-wrap {
+    min-height: 0;
+}
+/* END: Home page min height */
+
+/* Home page: "Symbol of Safety" white oval straddling the black nav bar and red row */
+.kb-row-layout-id15_21e35c-8a {          /* Nav Header row: sit above the red row below */
+	position: relative;
+	z-index: 5;
+}
+.kb-image15_8f5481-e4 figure {
+	margin: 0;
+	max-width: none;                      /* Kadence caps it at 77px */
+}
+.kb-image15_8f5481-e4 img.kb-img {
+	display: block;
+	box-sizing: content-box;
+	width: 96px;
+	max-width: none;
+	height: auto;
+	padding: 10px 12px;
+	background: #fff;
+	border-radius: 50%;                   /* 50% on a non-square box = oval */
+}
+@media (min-width: 768px) {
+	.kb-row-layout-id15_21e35c-8a > .kt-row-column-wrap {
+		min-height: 44px;                 /* bar height */
+		align-content: center;            /* vertically center the menus in the bar */
+		position: relative;               /* the oval is positioned against the whole bar */
+	}
+	.kadence-column15_97f96b-48,
+	.kadence-column15_97f96b-48 > .kt-inside-inner-col {
+		position: static !important;
+	}
+	/* Take the logo out of the flow so the bar height is set by the menus only,
+	   then center the oval on the bar so it spills above and below it. */
+	.wp-block-kadence-image.kb-image15_8f5481-e4 {
+		position: absolute !important;    /* Kadence's z-index setting forces relative */
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0 !important;
+		z-index: 10;
+	}
+}
+/* END: Symbol of Safety oval */
+
+/* Footer specific link styles */
+.sitewide-footer {
+	color: #ffffff;
+	font-size: 12px;
+}
+.site-footer .wp-block-kadence-navigation .menu {
+    row-gap: 0,0;
+}
+
+.sitewide-footer a:hover, .sitewide-footer a:focus, .sitewide-footer a:active,
+.sitewide-footer a.kb-nav-link-content:active {
+    color: var(--global-palette-highlight-alt);
+    text-underline-offset: .25em;
+}
+.sitewide-footer a.kb-nav-link-content, 
+.sitewide-footer > a {
+	color: white;
+	text-decoration-line: none;
+}
+/* END Footer specific link styles */
+
+/* The Cars gallery page */
+.kb-gallery-caption-style-below .kadence-blocks-gallery-item .kadence-blocks-gallery-item-inner .kadence-blocks-gallery-item__caption {
+    padding: 1px 0 5px 0;
+}
+
+/* Add 2px space between gallery images */
+.galleryid-438 {
+  gap: 2px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.gallery-item {
+	padding: .5em 0;
+}
+/* Add arrow to link */
+a[target="_blank"] {
+  position: relative;
+  padding-right: 1rem;
+}
+a[target="_blank"]::after {
+  content: "↗";
+  margin-left: 0.25rem;
+  font-size: 0.75em;
+  opacity: 0.7;
+}
+
+#wrapper > div.kb-row-layout-wrap.kb-row-layout-id243_f6530d-d2.alignnone.has-theme-palette3-background-color.kt-row-has-bg.wp-block-kadence-rowlayout > div > div.wp-block-kadence-column.kadence-column243_2999f5-2c > div > div > nav > div > ul div > a {
+	padding-bottom: .25rem;
+	padding-top: 0;
+	color: var(--global-palette6, #718096);
+}
+
+.sitewide-footer {
+	color: var(--global-palette6, #718096);
+	font-size: 10px;
+}
+.sitewide-footer a {
+	text-decoration: none;
+}
+
+/* Log In/Out nav */
+.wp-block-kadence-navigation .kb-nav-link-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/* END: Log In/Out nav */
